@@ -9,11 +9,8 @@ const textAverage = bodyElement.querySelector('.average-population');
 
 const value = population.map((elem) => +elem.textContent.replaceAll(',', ''));
 
-const total = value
-  .reduce((sum, elem) => sum + elem, 0)
-  .toLocaleString('en-Us');
+const total = value.reduce((sum, elem) => sum + elem, 0);
+const average = Math.round(total / value.length);
 
-const average = Math.round(total / value.length).toLocaleString('en-Us');
-
-textTotal.textContent = total;
-textAverage.textContent = average;
+textTotal.textContent = total.toLocaleString('en-Us');
+textAverage.textContent = average.toLocaleString('en-Us');
